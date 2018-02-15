@@ -1,0 +1,36 @@
+
+
+header {
+  background-image: url('http://www.creativerisksolutions.co.uk/wp-content/uploads/2013/04/event-insurance.png');
+  width: 100%;
+  height: 50em;
+  background-size: cover;
+  background-position: center;
+}
+.logo {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 500;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+}
+
+.container {
+  max-width: 100%;
+  float: inherit;
+  background-position: center;
+  background-color: red;
+  background: url(sweettexture.jpg);
+}
+
+/*
+.col-lg-10 {
+  max-width: 100%;
+  float: inherit;
+  background-position: center;
+} */
+
+fieldset {
+  max-width: 50%;
+  background-position: center;
+}
