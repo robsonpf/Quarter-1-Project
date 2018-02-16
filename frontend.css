@@ -19,18 +19,27 @@ header {
   max-width: 100%;
   float: inherit;
   background-position: center;
-  background-color: red;
-  background: url(sweettexture.jpg);
+  background-color:#e7d6d6;
+  padding-bottom: 5%;
 }
-
-/*
-.col-lg-10 {
-  max-width: 100%;
-  float: inherit;
-  background-position: center;
-} */
 
 fieldset {
   max-width: 50%;
   background-position: center;
+  padding-bottom: 2%;
+}
+
+.teaser {
+  font-size: 4em;
+  text-align: center;
+  font-weight: 300;
+  padding-top: 6%;
+  padding-bottom: 6%;
+  background: linear-gradient(0deg, #fdb6ec, #bcfcf7);
+}
+
+.social {
+  font-size: 50px;
+  font-weight: 400;
+  color: #2184f3;
 }
