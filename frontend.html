@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="frontend.css">
-    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
+    <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">  
     <title></title>
   </head>
-  <body>
-    <header>
+  <body id="loading">
+    <header class="header">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Best Events</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,49 +16,39 @@
         <div class="collapse navbar-collapse" id="navbarColor02">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-              <a class="nav-link" href="#">HOME <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="frontend.html">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">ABOUT</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">EVENTS</a>
+              <a class="nav-link" href="events.html">EVENTS</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">GALLERY</a>
             </li>
           </ul>
-          <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-          </form>
         </div>
       </nav>
     <h1 class="logo">Create your Event SF</h1>
   </header>
 
     <div class="container">
-        <form>
+        <form id="myform">
           <fieldset>
             <legend>Event Creation</legend>
-            <div class="form-group row">
-              <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-              <div class="col-sm-10">
-                <input type="text" readonly="" class="form-control-plaintext" id="staticEmail" value="email@example.com">
-              </div>
-            </div>
             <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+              <label for="email">Email address</label>
+              <input id="email" type="email" class="form-control" aria-describedby="emailHelp" placeholder="Enter email">
               <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+              <label for="password">Password</label>
+              <input  id="password" type="password" class="form-control" placeholder="Password">
             </div>
             <div class="form-group">
               <label for="">Event Title</label>
-              <input type="text" class="form-control"  placeholder="">
+              <input id="eventTitle" type="text" class="form-control" placeholder="">
             </div>
             <div class="form-group">
               <label for="">Event Date</label>
@@ -74,19 +64,19 @@
             </div>
             <div class="form-group">
               <label for="">Organizer Name</label>
-              <input type="text" class="form-control"  placeholder="">
+              <input id="organizerName" type="text" class="form-control"  placeholder="">
             </div>
             <div class="form-group">
               <label for="">Phone Number</label>
-              <input type="phone" class="form-control"  placeholder="" pattern= "^(([2-9])([0-9]{2})([2-9])([0-9]{2})([0-9]{4}))$">
+              <input id="phoneNumber" type="phone" class="form-control"  placeholder="" pattern= "^(([2-9])([0-9]{2})([2-9])([0-9]{2})([0-9]{4}))$">
             </div>
             <div class="form-group">
               <label for="">Location</label>
-              <input type="text" class="form-control"  placeholder="">
+              <input id="location" type="text" class="form-control"  placeholder="">
             </div>
             <div class="form-group">
               <label for="exampleSelect1">Ticket Admission</label>
-              <select class="form-control" id="exampleSelect1">
+              <select id="ticketAdmission" class="form-control">
                 <option>PAID TICKET</option>
                 <option>FREE TICKET</option>
                 <option>DONATION</option>
@@ -99,7 +89,7 @@
                   <div class="input-group-prepend">
                     <span class="input-group-text">$</span>
                   </div>
-                  <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+                  <input id="ticketPrice" type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
                   <div class="input-group-append">
                     <span class="input-group-text">.00</span>
                   </div>
@@ -108,7 +98,7 @@
             </div>
             <div class="form-group">
               <label for="exampleSelect1">Event Type</label>
-              <select class="form-control" id="exampleSelect1">
+              <select  id="eventType" class="form-control">
                 <option>Concert or Performance</option>
                 <option>Conference</option>
                 <option>Convention</option>
@@ -122,7 +112,7 @@
             </div>
             <div class="form-group">
               <label for="exampleSelect2">Number of Tickets Available</label>
-              <select multiple="" class="form-control" id="exampleSelect2">
+              <select multiple="" class="form-control" id="ticketsAvailable">
                 <option>25</option>
                 <option>50</option>
                 <option>100</option>
@@ -179,7 +169,7 @@
                 </label>
               </div>
             </fieldset>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button id="save" type="submit" class="btn btn-primary">Submit</button>
           </fieldset>
         </form>
       </div>
@@ -193,5 +183,6 @@
           <a href="#" class="fa fa-instagram"></a>
           <a href="#" class="fa fa-youtube"></a>
       </section>
+      <script type="text/javascript" src="frontend.js"></script>
   </body>
 </html>
