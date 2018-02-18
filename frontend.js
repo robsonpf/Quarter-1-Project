@@ -4,9 +4,11 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 })
 
-
-
 function saveFormData() {
+  if(!validateAllForms()) {
+    alert('form data invalid');
+    return;
+  }
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let eventTitle = document.getElementById("eventTitle").value;
@@ -36,21 +38,22 @@ function saveFormData() {
   frn.ticketPrice = ticketPrice;
   frn.eventType = eventType;
   //frn.ticketsAvalaible = ticketsAvalaible;
-  let saved_events = localStorage.getItem("SAVED_EVENTS");
-  console.log(saved_events);
-  if(saved_events === null) {
-    saved_events = '[]';
-    console.log(saved_events)
+  let savedEvents = localStorage.getItem("SAVED_EVENTS");
+  //console.log(saved_events);
+  if(savedEvents === null) {
+    savedEvents = '[]';
+  //  console.log(saved_events)
   }
-  saved_events = JSON.parse(saved_events);
-  saved_events.push(JSON.stringify(frn));
-  localStorage.setItem("SAVED_EVENTS", JSON.stringify(saved_events));
+  savedEvents = JSON.parse(savedEvents);
+  savedEvents.push(JSON.stringify(frn));
+  localStorage.setItem("SAVED_EVENTS", JSON.stringify(savedEvents));
   //alert('saving event');
+  document.elementById("myForm").addEventListener('click', validateAllForms);
 }
 
 
-
-function loadFormData() {
+function validateAllForms() {
+  var isValid = true;
   let email = document.getElementById("email").value;
   let password = document.getElementById("password").value;
   let eventTitle = document.getElementById("eventTitle").value;
@@ -63,21 +66,37 @@ function loadFormData() {
   let ticketAdmission = document.getElementById("ticketAdmission").value;
   let ticketPrice = document.getElementById("ticketPrice").value;
   let eventType = document.getElementById("eventType").value;
-  let ticketsAvalaible = document.getElementById("ticketsAvalaible").value;
-  let  = document.getElementById("").value;
-  let userData = localStorage.getItem("USER_DATA");
-  console.log(userData);
-  email = JSON.parse(userData).email;
-  password = JSON.parse(userData).password;
-  eventTitle = JSON.parse(userData).eventTitle;
-  date = JSON.parse(userData).date;
-  startTime = JSON.parse(userData).startTime;
-  endTime = JSON.parse(userData).endTime;
-  organizerName = JSON.parse(userData).organizerName;
-  phoneNumber = JSON.parse(userData).phoneNumber;
-  location = JSON.parse(userData).location;
-  ticketAdmission = JSON.parse(userData).ticketAdmission;
-  ticketPrice = JSON.parse(userData).ticketPrice;
-  ticketsAvalaible = JSON.parse(userData).ticketsAvalaible;
-  eventType = JSON.parse(userData).eventType;
+  if(email === null || email === undefined || email === '') {
+    return false;
+  }
+  if (eventTitle === null || eventTitle === undefined || eventTitle === '') {
+    return false;
+  }
+  if (date === null || date === undefined || date === '') {
+    return false
+  }
+  if (startTime === null || startTime === undefined || startTime === '') {
+    return false;
+  }
+  if (endTime === null || endTime === undefined || endTime === '') {
+    return false;
+  }
+  if (organizerName === null || organizerName === undefined || organizerName === '') {
+    return false;
+  }
+  if (phoneNumber === null || phoneNumber === undefined || phoneNumber === '') {
+    return false;
+  }
+  if (location === null || location === undefined || location === '') {
+    return false;
+  }
+  if (ticketAdmission === null || ticketAdmission === undefined || ticketAdmission === '') {
+    return false;
+  }
+  if (ticketPrice === null || ticketPrice === undefined || ticketPrice === '') {
+    return false;
+  }
+
+  return isValid;
+
 }

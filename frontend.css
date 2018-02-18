@@ -21,7 +21,7 @@
   max-width: 100%;
   float: inherit;
   background-position: center;
-  background-color:#e7d6d6;
+  background-color:#ffcb18b8;
   padding-bottom: 5%;
 }
 
@@ -57,3 +57,14 @@ fieldset {
   color: #888;
   font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
  }
+
+
+ /*
+   ========================================
+   Table Events
+   ========================================
+ */
+.container {
+  font-weight: normal;
+  color: #000000c7;
+}

@@ -6,7 +6,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootswatch/4.0.0-beta.3/cosmo/bootstrap.min.css" rel="stylesheet" integrity="sha384-a1fJ5ppVJ3J5OscI8CmYpZH6XRnafYX7sXnA9uVadDWXox/IU9IIk9zz5zNE5HPL" crossorigin="anonymous">
     <title></title>
   </head>
-    <body class="events">
+    <body class="events" onload="loadFormData()">
       <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <a class="navbar-brand" href="#">Best Events</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,18 +29,25 @@
           </ul>
         </div>
       </nav>
+
     <h1 class="logo">What's going on in San Francisco</h1>
     <header class="primary-header container group">
       <h1 class="logo">
         <a href="index.html">Events<br>List</a>
       </h1>
-      <h3 class="tagline">San Francisco, CA</h3>
     </header>
 
     <section class="container">
-		<p>"I think everybody in this country should learn how to program a computer because it teaches you how to think."</p>
-    <p class="right">-Steve Jobs</p>
-	   </section>
+      <table id="eventsTbl" style="width:100%">
+        <tr>
+          <th>Event Title</th>
+          <th>Event Date</th>
+          <th>Location</th>
+          <th>Start Time</th>
+          <th>End Time</th>
+        </tr>
+      </table>
+    </section>
 
 
        <section class="teaser" id="social-buttons2-c">
@@ -51,5 +58,6 @@
           <a href="#" class="fa fa-instagram"></a>
           <a href="#" class="fa fa-youtube"></a>
         </section>
+      <script type="text/javascript" src="events.js"></script>
   </body>
 </html>
