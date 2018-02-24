@@ -1,54 +1,49 @@
 document.addEventListener("DOMContentLoaded", function() {
-  document.getElementById("save").addEventListener("click", function() {
-    saveFormData();
-  });
+  try {
+    document.getElementById("save").addEventListener("click", function() {
+      if(!validateAllForms()) {
+        alert('form data invalid');
+        return;
+      }
+      var frn = {};
+      frn.email = document.getElementById("email").value;
+      frn.password = document.getElementById("password").value;
+      frn.eventTitle = document.getElementById("eventTitle").value;
+      frn.date = document.getElementById("date").value;
+      frn.startTime = document.getElementById("startTime").value;
+      frn.endTime = document.getElementById("endTime").value;
+      frn.organizerName = document.getElementById("organizerName").value;
+      frn.phoneNumber = document.getElementById("phoneNumber").value;
+      frn.location = document.getElementById("location").value;
+      frn.ticketAdmission = document.getElementById("ticketAdmission").value;
+      frn.ticketPrice = document.getElementById("ticketPrice").value;
+      frn.eventType = document.getElementById("eventType").value;
+
+      saveData("SAVED_EVENTS", frn);
+      document.location = 'events.html';
+    });
+  } catch (err) {
+    //just for test suite
+  }
 })
 
-function saveFormData() {
-  if(!validateAllForms()) {
-    alert('form data invalid');
-    return;
-  }
-  let email = document.getElementById("email").value;
-  let password = document.getElementById("password").value;
-  let eventTitle = document.getElementById("eventTitle").value;
-  let date = document.getElementById("date").value;
-  let startTime = document.getElementById("startTime").value;
-  let endTime = document.getElementById("endTime").value;
-  let organizerName = document.getElementById("organizerName").value;
-  let phoneNumber = document.getElementById("phoneNumber").value;
-  let location = document.getElementById("location").value;
-  let ticketAdmission = document.getElementById("ticketAdmission").value;
-  let ticketPrice = document.getElementById("ticketPrice").value;
-  let eventType = document.getElementById("eventType").value;
-  //let ticketsAvalaible = document.getElementById("ticketsAvalaible").value;
+//document.elementById("myForm").addEventListener('click', validateAllForms);
 
+function saveData(key, data) {
 
-  let frn = {};
-  frn.email = email;
-  frn.password = password;
-  frn.eventTitle = eventTitle;
-  frn.date = date;
-  frn.startTime = startTime;
-  frn.endTime = endTime;
-  frn.organizerName = organizerName;
-  frn.phoneNumber = phoneNumber;
-  frn.location = location;
-  frn.ticketAdmission = ticketAdmission;
-  frn.ticketPrice = ticketPrice;
-  frn.eventType = eventType;
-  //frn.ticketsAvalaible = ticketsAvalaible;
-  let savedEvents = localStorage.getItem("SAVED_EVENTS");
+  let savedEvents = localStorage.getItem(key);
+
   //console.log(saved_events);
   if(savedEvents === null) {
     savedEvents = '[]';
   //  console.log(saved_events)
   }
   savedEvents = JSON.parse(savedEvents);
-  savedEvents.push(JSON.stringify(frn));
-  localStorage.setItem("SAVED_EVENTS", JSON.stringify(savedEvents));
+  savedEvents.push(JSON.stringify(data));
+  // console.log(savedEvents)
+  localStorage.setItem(key, JSON.stringify(savedEvents));
   //alert('saving event');
-  document.elementById("myForm").addEventListener('click', validateAllForms);
+
 }
 
 
@@ -96,7 +91,52 @@ function validateAllForms() {
   if (ticketPrice === null || ticketPrice === undefined || ticketPrice === '') {
     return false;
   }
-
   return isValid;
+}
 
+
+
+function loadFormData() {
+
+  var userData = loadData("SAVED_EVENTS");
+
+  let table = document.getElementById("eventsTbl");
+  for(i = 0; i < userData.length; i++) {
+    let json = JSON.parse(userData[i]);
+    let tr = document.createElement('tr');
+    let tdEventTitle = document.createElement('td');
+    console.log(json);
+    tdEventTitle.innerHTML = json.eventTitle;
+    tr.appendChild(tdEventTitle);
+
+    let tdEventDate = document.createElement('td');
+    tdEventDate.innerHTML = json.date;
+    tr.appendChild(tdEventDate);
+
+    let tdEventLocation = document.createElement('td');
+    tdEventLocation.innerHTML = json.location;
+    tr.appendChild(tdEventLocation);
+
+    let tdStartTime = document.createElement('td');
+    tdStartTime.innerHTML = json.startTime;
+    tr.appendChild(tdStartTime);
+
+    let tdEndTime = document.createElement('td');
+    tdEndTime.innerHTML = json.endTime;
+    tr.appendChild(tdEndTime);
+
+
+    table.appendChild(tr);
+  }
+
+}
+
+function loadData(key) {
+  let userData = localStorage.getItem(key);
+  userData = JSON.parse(userData);
+  return userData;
+}
+
+function deleteData(key) {
+  localStorage.removeItem(key);
 }

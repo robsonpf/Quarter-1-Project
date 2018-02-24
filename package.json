@@ -1,0 +1,29 @@
+{
+  "name": "quarter-1-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "events.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "init": "^0.1.2",
+    "mocha-browser": "^0.2.0",
+    "chai": "^4.1.2",
+    "mocha": "^3.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robsonpf/Quarter-1-Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robsonpf/Quarter-1-Project/issues"
+  },
+  "homepage": "https://github.com/robsonpf/Quarter-1-Project#readme"
+}
