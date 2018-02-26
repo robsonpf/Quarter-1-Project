@@ -1,5 +1,5 @@
 # Quarter-1-Project
-
+TDD intructions
 Getting Started with Mocha in the Q1 Project
 This repository is designed to get you started with running Mocha tests in the browser.
 
@@ -48,13 +48,7 @@ describe('events', function () {
   })
 Go back to your page and refresh. You should now see three failing tests. You're now running your tests with Chai!
 
-Finally, we will want to start writing some code to make everything pass. There are a number of places you could put your code, but we will put it in a src/ directory. From the root directory of this project, run the following:
-
-mkdir src && touch src/frontend.js
-Add the following to the new file you've created:
-
-var calculator = {}
-And then add the following to the index.html file that is inside of the test/ folder.
+Finally, we will want to start writing some code to make everything pass. 
 
 <!-- Add this line below the line that you required earlier -->
 <script src="../src/frontend.js" charset="utf-8"></script>
@@ -62,3 +56,19 @@ Go back to the page where your tests are running and refresh. You should have a 
 
 Instructions
 To finish this project, get the two failing #add tests to pass. Then, add a new describe block for a #subtract method. Add your own tests and get those to pass.
+
+
+Instructions how to add img to the README.md file
+
+With Chrome web store install extensions to get image of the page.
+
+ADD that to the page 
+![alt text](q1project.surge.sh.png)
+
+![alt text](q1project.surge.sh/events.html.png)
+
+
+
+
+
+
