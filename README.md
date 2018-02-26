@@ -63,9 +63,9 @@ Instructions how to add img to the README.md file
 With Chrome web store install extensions to get image of the page.
 
 ADD that to the page 
-![Example](q1project.surge.sh.png)
+![Example](https://q1project.surge.sh.png)
 
-![Example](q1project.surge.sh/events.html.png)
+![Example](https://q1project.surge.sh/events.html.png)
 
 
 
