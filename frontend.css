@@ -5,38 +5,39 @@
 .header {
   background-image: url('http://www.creativerisksolutions.co.uk/wp-content/uploads/2013/04/event-insurance.png');
   width: 100%;
-  height: 50em;
+  height: 35em;
   background-size: cover;
   background-position: center;
 }
 .logo {
-  font-size: 80px;
+  font-size: 45px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 300;
   letter-spacing: .5px;
-  text-transform: uppercase;
+  color: #5b1b03;
 }
 
 .container {
   max-width: 100%;
   float: inherit;
   background-position: center;
-  background-color:#ffcb18b8;
+  background-color:#373a3c;
   padding-bottom: 5%;
 }
 
 fieldset {
-  max-width: 50%;
+  max-width: 40%;
   background-position: center;
   padding-bottom: 2%;
+  margin: auto;
 }
 
 .teaser {
   font-size: 4em;
   text-align: center;
   font-weight: 300;
-  padding-top: 6%;
-  padding-bottom: 6%;
+  padding-top: 3%;
+  padding-bottom: 3%;
   background: linear-gradient(0deg, #fdb6ec, #bcfcf7);
 }
 
@@ -54,11 +55,22 @@ fieldset {
 */
  .events {
   background: #293f50;
-  color: #888;
-  font: 300 16px/22px "Lato", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #88888875;
  }
 
 
+.list {
+  font-size: 50px;
+  text-align: center;
+  font-weight: 200;
+  letter-spacing: .5px;
+  color: #a09d9d;
+}
+
+.image {
+  height: 300px;
+  width: 100%;
+}
  /*
    ========================================
    Table Events
@@ -66,5 +78,6 @@ fieldset {
  */
 .container {
   font-weight: normal;
-  color: #000000c7;
+  font-size: large;
+  color: #eaedf1a1;
 }

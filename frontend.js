@@ -1,10 +1,12 @@
 document.addEventListener("DOMContentLoaded", function() {
   try {
     document.getElementById("save").addEventListener("click", function() {
+      //if the form is not completed it should pop out alert
       if(!validateAllForms()) {
         alert('form data invalid');
         return;
       }
+      //add a key and value to the object for each input
       var frn = {};
       frn.email = document.getElementById("email").value;
       frn.password = document.getElementById("password").value;
@@ -19,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function() {
       frn.ticketPrice = document.getElementById("ticketPrice").value;
       frn.eventType = document.getElementById("eventType").value;
 
+  //when the submit button is click, the function saveData get call passing the
+  //SAVED_EVENTS and the oject and open the events.html page
       saveData("SAVED_EVENTS", frn);
       document.location = 'events.html';
     });
@@ -27,20 +31,18 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 })
 
-//document.elementById("myForm").addEventListener('click', validateAllForms);
-
+//save the data in the local storage
 function saveData(key, data) {
 
   let savedEvents = localStorage.getItem(key);
-
   //console.log(saved_events);
   if(savedEvents === null) {
     savedEvents = '[]';
-  //  console.log(saved_events)
+   //console.log(saved_events)
   }
   savedEvents = JSON.parse(savedEvents);
   savedEvents.push(JSON.stringify(data));
-  // console.log(savedEvents)
+  //console.log(savedEvents)
   localStorage.setItem(key, JSON.stringify(savedEvents));
   //alert('saving event');
 
@@ -95,7 +97,7 @@ function validateAllForms() {
 }
 
 
-
+// load the form in the local storage and append the values in the table 
 function loadFormData() {
 
   var userData = loadData("SAVED_EVENTS");
